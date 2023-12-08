@@ -6,8 +6,9 @@ import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-import onChange from "./plugins/onChange";
 import "../textEditor/textEditor.css";
+import useDebounce from "../hooks/useDebounce";
+import onChange from "./plugins/onChange";
 
 const theme = {
   ltr: "ltr",
@@ -48,7 +49,7 @@ function TextEditor() {
           ErrorBoundary={LexicalErrorBoundary}
         />
         <HistoryPlugin />
-        <OnChangePlugin onChange={onChange} />
+        <OnChangePlugin onChange={useDebounce(onChange, 1000)} />
         <MyCustomAutoFocusPlugin />
       </LexicalComposer>
     </div>
