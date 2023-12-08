@@ -11,6 +11,10 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        // width: 100%;
+    }
+    div{
+        width: 100%;
     }
     html, body, div, span, h1, h2, h3, h4, h5, h6, p, hr,
     a, dl, dt, dd, ol, ul, li, form, label, table{
