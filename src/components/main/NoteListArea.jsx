@@ -1,15 +1,24 @@
 import styled from "styled-components";
 import NoteList from "../noteList/NoteList";
+import { useEffect, useState } from "react";
 
 const NoteListArea = () => {
-  const dummyList = [
-    { content: "note1", id: 121212 },
-    { content: "note2", id: 121234 },
-  ];
+  if (localStorage.getItem("saveTextInfo")) {
+    const saveTextInfo = JSON.parse(localStorage.getItem("saveTextInfo"));
+  }
+
+  const [textInfo, setTextInfo] = useState(saveTextInfo);
+
+  useEffect(() => {
+    setTextInfo(textInfo);
+  }, [textInfo]);
+
+  const dummyList = [textInfo];
+
   return (
     <NoteListStyle>
       {dummyList.map((item) => (
-        <NoteList key={item.id} item={item} />
+        <NoteList key={item.timestamp} item={item} />
       ))}
     </NoteListStyle>
   );

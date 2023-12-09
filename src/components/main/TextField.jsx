@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 const TextField = () => {
-  return (
-    <TextFieldStyle>
-      <textarea></textarea>
-    </TextFieldStyle>
-  );
+  return <TextFieldStyle></TextFieldStyle>;
 };
 
 const TextFieldStyle = styled.div`

@@ -7,5 +7,15 @@ export default function onChange(editorState) {
 
     console.log(root, selection);
     console.log(root.__cachedText);
+
+    const date = new Date();
+
+    localStorage.setItem(
+      "saveTextInfo",
+      JSON.stringify({
+        text: root.__cachedText,
+        timestamp: date.toISOString(),
+      })
+    );
   });
 }
