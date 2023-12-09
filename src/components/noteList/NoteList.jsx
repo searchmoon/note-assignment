@@ -3,8 +3,7 @@ import styled from "styled-components";
 const NoteList = ({ item }) => {
   return (
     <NoteListStyle>
-      <strong>{item.content}</strong>
-      
+      <strong>{item.text}</strong>
     </NoteListStyle>
   );
 };

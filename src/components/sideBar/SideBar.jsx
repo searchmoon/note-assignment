@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import SideTab from "./SideTab";
 
 const SideBar = () => {
-  return <SideBarStyle>sidebar</SideBarStyle>;
+  return (
+    <SideBarStyle>
+      <SideTab title={"NOTEBOOKS"} />
+    </SideBarStyle>
+  );
 };
 
 const SideBarStyle = styled.div`
